@@ -14,5 +14,13 @@
   },
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markiyanm/phr-hackathon-2020.git"
+  },
+  "bugs": {
+    "url": "https://github.com/markiyanm/phr-hackathon-2020/issues"
+  },
+  "homepage": "https://github.com/markiyanm/phr-hackathon-2020#readme"
 }
