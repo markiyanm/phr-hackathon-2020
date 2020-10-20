@@ -13,7 +13,9 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
+app.post('/api/campaign', (req, resp) => {
+    console.log("Reached here....");
+});
 
 
 
