@@ -19,15 +19,17 @@ router.post('/', (req, res) => {
     
     console.log(lead);
 
-    lead.save()
-        .then(data => {
-            console.log('in the then clause');
-            res.json(data);
-        })
-        .catch(err => {
-            console.log('in the error clause');
-            res.json({ message: err });
-        });
+    res.json(lead);
+
+    // lead.save()
+    //     .then(data => {
+    //         console.log('in the then clause');
+    //         res.json(data);
+    //     })
+    //     .catch(err => {
+    //         console.log('in the error clause');
+    //         res.json({ message: err });
+    //     });
 });
 
 module.exports = router;
