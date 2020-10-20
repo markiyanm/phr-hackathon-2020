@@ -1,21 +1,31 @@
 const express= require('express');
 const path = require('path');
 const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+require('dotenv/config');
+
+//Import Routes
+const apiRoutes = require('./routes/api');
+
+app.use(bodyParser.json());
+app.use('/api', apiRoutes);
+
 const PORT = process.env.PORT || 5000;
+
+
+
+//Connect to DB  //user: hackathon2020 pw:Welcome1
+mongoose.connect(process.env.DB_CONNECTION, () =>
+    console.log('connected to DB')
+); 
+
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
-// });
-
-//Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.post('/api/campaign', (req, resp) => {
-    console.log("Reached here....");
-});
 
 
 
