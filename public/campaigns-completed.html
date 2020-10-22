@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campaigns</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" style="width: 50%; padding-bottom: 30px;" src="https://images.ctfassets.net/uazigsvtldjw/24GsBPVZ9iSOyKcY0IWAaE/e03aa902ebd9c4be15c51ac3f7aaeaff/Phreesia_Tile_Logo.png"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold">Acme Trials Inc.</span>
+                            <span class="text-muted text-xs block">Settings <b class="caret"></b></span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Preferences</a></li>
+                            <li><a class="dropdown-item" href="#">Billing</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        PHR
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                </li>
+                <li class="active">
+                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Campaigns</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="active"><a href="campaigns.html">Current <span class="label label-info float-right">2</span></a></li>
+                        <li><a href="campaigns-completed.html">Completed <span class="label label-info float-right">12</span></a></li>
+                        <li><a href="create-new-campaign.html">Create New</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Campaign Management Portal</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <i class="fa fa-user-plus fa-fw"></i>&nbsp;&nbsp;You have 2 new leads
+                                    <span class="float-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <i class="fa fa-user-plus fa-fw"></i>&nbsp;&nbsp;You have 4 new leads
+                                    <span class="float-right text-muted small">2 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <i class="fa fa-flag-checkered fa-w"></i>&nbsp;&nbsp;Campaign completed
+                                    <span class="float-right text-muted small">1 day ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="#" class="dropdown-item">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Current Campaigns</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a>Campaigns</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <strong>Current</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+        <div class="wrapper wrapper-content  animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Campaign list</h5>
+                            <div class="ibox-tools">
+                                <a href="create-new-campaign.html" class="btn btn-primary btn-xs">Add new campaign</a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div class="m-b-lg">
+
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" placeholder="Search by campaign name..." >
+                                    <div class="input-group-append">
+                                        <button class="btn btn-white" type="button">Search</button>
+                                    </div>
+                                </div>
+
+                                <div class="m-t-md">
+
+                                    <div class="float-right">
+                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-comments"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-user"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-list"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-pencil"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-print"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-cogs"></i> </button>
+                                    </div>
+                                    <!-- <strong>Found 12 campaigns.</strong> -->
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                            <table class="table table-hover issue-tracker">
+                                <thead>
+                                    <tr>
+                                        <td>Status</td>
+                                        <td>Name</td>
+                                        <td>Complete</td>
+                                        <td>Enrolled</td>
+                                        <td>Impressions</td>
+                                        <td>Target</td>
+                                        <td>End date</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Diabetes trial #4-28</a>
+                                            <!-- <small>End 5/5/2021 or 10,000 users</small> -->
+                                        </td>
+                                        <td><span class="pie">1,0.11</span> 89%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">89,532</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">200,153</button>
+                                        </td>
+                                        <td>100,000</td>
+                                        <td>May 5, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Asthma trial #13-28</a>
+                                        </td>
+                                        <td><span class="pie">0.50,1</span> 31%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 2,343</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 21,434</button>
+                                        </td>
+                                        <td>10,000</td>
+                                        <td>Feb 29, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Cancer trial #234-28</a>
+                                            <!-- <small>End 5/5/2021 or 10,000 users</small> -->
+                                        </td>
+                                        <td><span class="pie">1,0.11</span> 91%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">91,443</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">199,583</button>
+                                        </td>
+                                        <td>100,000</td>
+                                        <td>May 5, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Heart Disease trial #5413-28</a>
+                                        </td>
+                                        <td><span class="pie">0.50,1</span> 29%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 3,776</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 19,556</button>
+                                        </td>
+                                        <td>10,000</td>
+                                        <td>Feb 29, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Diabetes trial #111234-28</a>
+                                            <!-- <small>End 5/5/2021 or 10,000 users</small> -->
+                                        </td>
+                                        <td><span class="pie">1,0.11</span> 86%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">89,532</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">200,153</button>
+                                        </td>
+                                        <td>100,000</td>
+                                        <td>May 5, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Asthma trial #163453-28</a>
+                                        </td>
+                                        <td><span class="pie">0.50,1</span> 33%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 2,343</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 21,434</button>
+                                        </td>
+                                        <td>10,000</td>
+                                        <td>Feb 29, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Cancer trial #23254-28</a>
+                                            <!-- <small>End 5/5/2021 or 10,000 users</small> -->
+                                        </td>
+                                        <td><span class="pie">1,0.11</span> 89%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">89,532</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">200,153</button>
+                                        </td>
+                                        <td>100,000</td>
+                                        <td>May 5, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Heart Disease trial #152233-28</a>
+                                        </td>
+                                        <td><span class="pie">0.50,1</span> 31%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 2,343</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 21,434</button>
+                                        </td>
+                                        <td>10,000</td>
+                                        <td>Feb 29, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Diabetes trial #6346544-28</a>
+                                            <!-- <small>End 5/5/2021 or 10,000 users</small> -->
+                                        </td>
+                                        <td><span class="pie">1,0.11</span> 89%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">89,532</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">200,153</button>
+                                        </td>
+                                        <td>100,000</td>
+                                        <td>May 5, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Asthma trial #16523-28</a>
+                                        </td>
+                                        <td><span class="pie">0.50,1</span> 31%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 2,343</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 21,434</button>
+                                        </td>
+                                        <td>10,000</td>
+                                        <td>Feb 29, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Diabetes trial #66644-28</a>
+                                            <!-- <small>End 5/5/2021 or 10,000 users</small> -->
+                                        </td>
+                                        <td><span class="pie">1,0.11</span> 89%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">89,532</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs">200,153</button>
+                                        </td>
+                                        <td>100,000</td>
+                                        <td>May 5, 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label label-alert">Ended</span>
+                                        </td>
+                                        <td class="issue-info">
+                                            <a href="#">Asthma trial #1346663-28</a>
+                                        </td>
+                                        <td><span class="pie">0.50,1</span> 31%</td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 2,343</button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-white btn-xs"> 21,434</button>
+                                        </td>
+                                        <td>10,000</td>
+                                        <td>Feb 29, 2020</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="footer">
+            <div class="float-right">
+                All rights reserved.
+            </div>
+            <div>
+                © Phreesia<sup>TM</sup>
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- Peity demo data -->
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Pull Campaign List -->
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "/api/campaigns"
+            }).then(function(data) {
+                console.log(data);
+            // $('.greeting-id').append(data.id);
+            // $('.greeting-content').append(data.content);
+            });
+        });
+    </script>
+</body>
+
+</html>

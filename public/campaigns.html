@@ -49,7 +49,7 @@
                     <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Campaigns</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li class="active"><a href="campaigns.html">Current <span class="label label-info float-right">2</span></a></li>
-                        <li><a href="#">Completed <span class="label label-info float-right">12</span></a></li>
+                        <li><a href="campaigns-completed.html">Completed <span class="label label-info float-right">12</span></a></li>
                         <li><a href="create-new-campaign.html">Create New</a></li>
                     </ul>
                 </li>
@@ -184,7 +184,7 @@
                                             <span class="label label-primary">Active</span>
                                         </td>
                                         <td class="issue-info">
-                                            <a href="campaign-leads.html?campaign=vaccine">Vaccine trial #34-28</a>
+                                            <a href="campaign-leads.html">Vaccine trial #34-28</a>
                                             <!-- <small>End 5/5/2021 or 10,000 users</small> -->
                                         </td>
                                         <td><span class="pie">1,0.11</span> 89%</td>
@@ -202,7 +202,7 @@
                                             <span class="label label-warning">Ending</span>
                                         </td>
                                         <td class="issue-info">
-                                            <a href="campaign-leads.html?campaign=cancer">Cancer trial #3-28</a>
+                                            <a href="campaign-leads-cancer.html">Cancer trial #3-28</a>
                                         </td>
                                         <td><span class="pie">0.50,1</span> 31%</td>
                                         <td>
@@ -255,6 +255,19 @@
 
     <!-- Peity demo data -->
     <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Pull Campaign List -->
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "/api/campaigns"
+            }).then(function(data) {
+                console.log(data);
+            // $('.greeting-id').append(data.id);
+            // $('.greeting-content').append(data.content);
+            });
+        });
+    </script>
 </body>
 
 </html>

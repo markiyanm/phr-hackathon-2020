@@ -59,7 +59,7 @@
                     <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Campaigns</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="campaigns.html">Current <span class="label label-info float-right">2</span></a></li>
-                        <li><a href="#">Completed <span class="label label-info float-right">12</span></a></li>
+                        <li><a href="campaigns-completed.html">Completed <span class="label label-info float-right">12</span></a></li>
                         <li class="active"><a href="create-new-campaign.html">Create New</a></li>
                     </ul>
                 </li>
@@ -880,7 +880,13 @@
 
             $("a[href='#finish']").click(function() {
                 console.log("finished clicked");
-                alert("Submitted");
+
+                var data = "";
+
+                $.post( "/api/new-campaign", function( data ) {
+                    alert(data);
+                    window.location.replace('/campaigns-leads.html');;
+                });
             });  
     
        });
@@ -965,8 +971,8 @@
     </script>
     <script>
         $(document).ready(function() {
-    $('.js-example-basic-multiple').select2();
-});
+            $('.js-example-basic-multiple').select2();
+        });
     </script>
 </body>
 

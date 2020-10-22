@@ -19,9 +19,7 @@
 </head>
 
 <body>
-
     <div id="wrapper">
-
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
@@ -51,7 +49,7 @@
                         <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Campaigns</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="campaigns.html">Current <span class="label label-info float-right">2</span></a></li>
-                            <li><a href="#">Completed <span class="label label-info float-right">12</span></a></li>
+                            <li><a href="campaigns-completed.html">Completed <span class="label label-info float-right">12</span></a></li>
                             <li><a href="create-new-campaign.html">Create New</a></li>
                         </ul>
                     </li>
@@ -157,26 +155,32 @@
                             <table class="footable table table-stripped toggle-arrow-tiny">
                                 <thead>
                                 <tr>
-
                                     <th data-toggle="true">Lead Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th data-hide="all">Age</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Smoker</th>
+                                    <th>Pregnant</th>
+                                    <th>Date</th>
+                                    <!-- <th data-hide="all">Age</th>
                                     <th data-hide="all">Smoker</th>
                                     <th data-hide="all">Language</th>
-                                    <th data-hide="all">Gender</th>
-                                    <th>Enrolled</th>
+                                    <th data-hide="all">Gender</th> -->
+                                    <th>Profile</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="LeadListTable">
+                                    <tr></tr>
+                                    <!-- <div id="LeadListTable"></div>
                                     <tr>
                                         <td>Dexter Morgan</td>
                                         <td>dexter@morgan.com</td>
                                         <td>303-394-2345</td>
-                                        <td>38</td>
+                                         <td>38</td>
                                         <td>No</td>
                                         <td>English</td>
-                                        <td>M</td>
+                                        <td>M</td> 
                                         <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                                     </tr>
                                     <tr>
@@ -208,7 +212,7 @@
                                         <td>English</td>
                                         <td>M</td>
                                         <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                                 <tfoot>
                                 <tr>
@@ -217,6 +221,13 @@
                                     </td>
                                 </tr>
                                 </tfoot>
+                                <!-- <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <ul class="pagination float-right"><li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li><li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li><li class="footable-page active"><a data-page="0" href="#">1</a></li><li class="footable-page-arrow disabled"><a data-page="next" href="#next">›</a></li><li class="footable-page-arrow disabled"><a data-page="last" href="#last">»</a></li></ul>
+                                        </td>
+                                    </tr>
+                                </tfoot> -->
                             </table>
 
                         </div>
@@ -263,6 +274,44 @@
 
     </script>
 
+    <!-- Pull Lead List -->
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "/api/leads"
+            }).then(function(data) {
+                console.log(data);
+
+            // iterate over the JSON array
+            $.each(data , function(index, item) { 
+                console.log("Name: " + item.name);
+                console.log("Gender: " + item.gender);
+                $('#LeadListTable').append(`
+                                    <tr>
+                                        <td>${item.name}</td>
+                                        <td>${item.email}</td>
+                                        <td>${item.phone}</td>
+                                        <td>${item.age}</td>
+                                        <td>${item.gender}</td>
+                                        <td>${item.smoker}</td>
+                                        <td>${item.pregnant}</td>
+                                        <td>${item.date}</td>
+                                        <td><a href="#"><i class="fa fa-user text-navy"></i>&nbsp;&nbsp;View</a></td>
+                                    </tr>`);
+            });
+
+                // dataJSON = $.parseJSON(data);
+                // console.log(`dataJSON: ${dataJSON}`);
+
+                // $.each(dataJSON, function(i, item) {
+                //     alert(item);
+                // });
+
+            // $('.greeting-id').append(data.id);
+            // $('.greeting-content').append(data.content);
+            });
+        });
+    </script>
 </body>
 
 </html>

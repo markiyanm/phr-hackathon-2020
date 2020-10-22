@@ -24,9 +24,7 @@ mongoose.connect(process.env.DB_CONNECTION, () =>
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-
+//app.set('views', path.join(__dirname, "/views/"));
 
 
 
