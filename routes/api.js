@@ -80,18 +80,16 @@ router.get('/leads', (req, res) => {
 
 router.post('/new-campaign', (req, res) => {
     console.log('got the request');
-    res.send('Campaign Successfully Created');
     console.log('sent response');
-    sendCampaignToPhreesia();
+    res.send("sent");
+    var result = sendCampaignToPhreesia();
+    // res.json(result);
 });
 
 function sendCampaignToPhreesia(){
     console.log('posting to Phreesia.....');
 
     var apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJNYXJraXlhbidzIFNlcnZpY2UiLCJpYXQiOjE2MDMyMjEzMDIsImV4cCI6MTYzNDc1NzMwNSwiYXVkIjoiSGFtbWFkJ3MgU2VydmljZSIsInN1YiI6IkNvbW11bmljYXRpb24gVG9rZW4ifQ.Qvm593-Gpge7kEchF9cj7B_xaa-as4z5wB9k7kePq8E';
-    var host = 'testnj.phreesia.net/sponsored/hackathon';
-    var path = '/api/campaign';
-
     const request = require('request')
 
     request.post(
@@ -104,10 +102,11 @@ function sendCampaignToPhreesia(){
       (error, res, body) => {
         if (error) {
           console.error(error)
-          return
+          return error
         }
         console.log(`statusCode: ${res.statusCode}`)
         console.log(body)
+        return body;
       }
     )
     

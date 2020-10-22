@@ -21,8 +21,12 @@
     <link href="css/plugins/select2/select2.min.css" rel="stylesheet">
     <link href="css/plugins/select2/select2-bootstrap4.min.css" rel="stylesheet">
     
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
     <!-- Select 2 -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="css/select2.min.css" />
 </head>
 
 <body>
@@ -797,8 +801,12 @@
     <!-- NouSlider -->
     <script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>
 
+    <!-- Sweet alert -->
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
     <!-- Select 2 -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script> -->
+    <script src="js/select2.min.js"></script>
 
     <script>
         $(document).ready(function(){
@@ -884,8 +892,23 @@
                 var data = "";
 
                 $.post( "/api/new-campaign", function( data ) {
-                    alert(data);
-                    window.location.replace('/campaigns-leads.html');;
+
+                    swal({
+                        title: "Success",
+                        text: "Your campaign was successfully created.",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonColor: "#1ab394",
+                        confirmButtonText: "View Campaign",
+                        closeOnConfirm: false
+                    }, function () {
+                        window.location.replace('/campaign-leads.html');
+                    });
+
+                    console.log(data);
+                    // alert(data);
+                    // window.location.replace('/campaign-leads.html');
+
                 });
             });  
     
