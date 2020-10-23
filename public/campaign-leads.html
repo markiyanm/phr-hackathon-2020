@@ -49,7 +49,7 @@
                         <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Campaigns</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li><a href="campaigns.html">Current <span class="label label-info float-right">2</span></a></li>
-                            <li><a href="campaigns-completed.html">Completed <span class="label label-info float-right">12</span></a></li>
+                            <li><a href="campaigns-completed.html">Completed <span class="label label-default float-right">12</span></a></li>
                             <li><a href="create-new-campaign.html">Create New</a></li>
                         </ul>
                     </li>
@@ -122,7 +122,7 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Campaign</a>
+                            <a href="campaigns.html">Campaigns</a>
                         </li>
                         <li class="breadcrumb-item active">
                             <strong>Leads</strong>
@@ -131,6 +131,62 @@
                 </div>
             </div>
         <div class="wrapper wrapper-content animated fadeInRight">
+
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <h5>Leads</h5>
+                            <h1 class="no-margins"><span id="leadCount">0</span></h1>
+                            <hr>
+                            <div class="stat-percent font-bold text-navy">18% <i class="fa fa-bolt"></i></div>
+                            <small>Conversion rate</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <h5>Campaign Goal</h5>
+                            <h2><span id="goalPercentage">0</span>%</h2>
+                            <div class="progress progress-mini">
+                                <div id="goalPercentageProgressBar" style="width: 0%;" class="progress-bar"></div>
+                            </div>
+                            <br>
+                            <div class="m-t-sm small">Target: <span id='campaignGoal'></span> leads</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <h5>Cost</h5>
+                            <h1 class="no-margins">$<span id='campaignCost'>0</span></h1>
+                            <hr>
+                            <div class="stat-percent font-bold text-navy">$<span id='costPerLead'>0</span><small> / lead</small></div>
+                            <small>Cost Per Lead</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <h5>Budget Spend</h5>
+                            <h2><span id="budgetSpend">0</span>%</h2>
+                            <div class="progress progress-mini">
+                                <div id="budgetSpendProgressBar" style="width: 0%;" class="progress-bar progress-bar-danger"></div>
+                            </div>
+                            <div>&nbsp;</div>
+                            <div class="m-t-sm small">Budget: $<span id = 'budget'>0</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -236,16 +292,86 @@
             </div>
         </div>
         <div class="footer">
-            <div class="float-right">
-                All rights reserved.
-            </div>
-            <div>
-                © Phreesia<sup>TM</sup>
-            </div>
-        </div>
 
+        <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated flipInY">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">John Smith</h4>
+                        <small class="font-bold">This is a demo patient. This is not production data.</small>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fa fa-check text-navy"></i></td>
+                                    <td>Name</td>
+                                    <td>John Smith</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-check text-navy"></i></td>
+                                    <td>Email</td>
+                                    <td>demo@email.com</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-check text-navy"></i></td>
+                                    <td>Phone</td>
+                                    <td>411-411-4111</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-check text-navy"></i></td>
+                                    <td>Age</td>
+                                    <td>21</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-check text-navy"></i></td>
+                                    <td>Gender</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-warning text-warning"></i></td>
+                                    <td>Smoker</td>
+                                    <td>unknown</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-check text-navy"></i></td>
+                                    <td>Pregnant</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-check text-navy"></i></td>
+                                    <td>Ethnicity</td>
+                                    <td>Native Hawaiian or Other Pacific Islander</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
         </div>
+                            
+        <div class="float-right">
+            All rights reserved.
         </div>
+        <div>
+            © Phreesia<sup>TM</sup>
+        </div>
+    </div>
+
+    </div>
+</div>
 
 
 
@@ -276,41 +402,76 @@
 
     <!-- Pull Lead List -->
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
+            loadLeadData();
+            setInterval(function(){ loadLeadData() }, 300000);
+        });
+
+        function loadLeadData(){
+
+            var leadCounter = 0;
+            var goalPercentage = 0;
+            var campaignGoal = 50;
+            var campaignCost = 0.00;
+            var costPerLead = 100.00;
+            var budget = 4000.00;
+
+            costPerLead = costPerLead.toFixed(2);                    
+            budget = budget.toFixed(2);
+
+            $('#LeadListTable tr').remove();
+            
+            $('#campaignGoal').text(campaignGoal.toString());
+            $('#costPerLead').text(costPerLead.toString());
+            $('#budget').text(budget);
+
             $.ajax({
                 url: "/api/leads"
             }).then(function(data) {
                 console.log(data);
 
-            // iterate over the JSON array
-            $.each(data , function(index, item) { 
-                console.log("Name: " + item.name);
-                console.log("Gender: " + item.gender);
-                $('#LeadListTable').append(`
-                                    <tr>
-                                        <td>${item.name}</td>
-                                        <td>${item.email}</td>
-                                        <td>${item.phone}</td>
-                                        <td>${item.age}</td>
-                                        <td>${item.gender}</td>
-                                        <td>${item.smoker}</td>
-                                        <td>${item.pregnant}</td>
-                                        <td>${item.date}</td>
-                                        <td><a href="#"><i class="fa fa-user text-navy"></i>&nbsp;&nbsp;View</a></td>
-                                    </tr>`);
+                // iterate over the JSON array
+                $.each(data , function(index, item) { 
+                    $('#LeadListTable').append(`
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>${item.email}</td>
+                            <td>${item.phone}</td>
+                            <td>${item.age}</td>
+                            <td>${item.gender}</td>
+                            <td>${item.smoker}</td>
+                            <td>${item.pregnant}</td>
+                            <td>${item.date}</td>
+                            <td><a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-user text-navy"></i>&nbsp;&nbsp;View</a></td>
+                        </tr>`);
+                            
+                    leadCounter++;
+                    $('#leadCount').text(leadCounter);
+                    goalPercentage = (parseInt(leadCounter)/campaignGoal) * 100;
+                    goalPercentage = goalPercentage.toFixed(2);
+                    
+                    //Update Cost Widget
+                    campaignCost = leadCounter * costPerLead;
+                    campaignCost = campaignCost.toFixed(2);
+                    budgetSpend = (parseInt(campaignCost)/budget) * 100;
+                    budgetSpend = budgetSpend.toFixed(2);
+                    console.log(`budgetSpend: ${budgetSpend}, campaignCost: ${campaignCost}, budget: ${budget}`);
+
+                    //Update Campaign Goal Widget
+                    $('#goalPercentage').text(goalPercentage.toString());
+                    $('#goalPercentageProgressBar').css('width', goalPercentage + '%');
+
+                    //Update Budget Spend Widget
+                    $('#budgetSpend').text(budgetSpend);
+                    $('#budgetSpendProgressBar').css('width', budgetSpend + '%');
+
+                    //Update Cost Widget
+                    campaignCost = leadCounter * costPerLead;
+                    campaignCost = campaignCost.toFixed(2);
+                    $('#campaignCost').text(campaignCost.toString());
+                });
             });
-
-                // dataJSON = $.parseJSON(data);
-                // console.log(`dataJSON: ${dataJSON}`);
-
-                // $.each(dataJSON, function(i, item) {
-                //     alert(item);
-                // });
-
-            // $('.greeting-id').append(data.id);
-            // $('.greeting-content').append(data.content);
-            });
-        });
+        }
     </script>
 </body>
 

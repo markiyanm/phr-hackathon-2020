@@ -63,7 +63,7 @@
                     <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Campaigns</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="campaigns.html">Current <span class="label label-info float-right">2</span></a></li>
-                        <li><a href="campaigns-completed.html">Completed <span class="label label-info float-right">12</span></a></li>
+                        <li><a href="campaigns-completed.html">Completed <span class="label label-default float-right">12</span></a></li>
                         <li class="active"><a href="create-new-campaign.html">Create New</a></li>
                     </ul>
                 </li>
@@ -215,7 +215,7 @@
                             <hr>
                             
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-lg-5">
                                 <h4>Age Range</h4>
                                 <span class="irs irs--flat js-irs-0 irs-with-grid">
                                     <span class="irs">
@@ -261,7 +261,7 @@
                                     </span>
                              </div>
 
-                             <div class="col-sm-6">
+                             <div class="col-lg-5">
                                 <h4>BMI Range</h4>
                                 <span class="irs irs--flat js-irs-0 irs-with-grid">
                                     <span class="irs">
@@ -309,44 +309,139 @@
                         </div>
                         
                         <hr>
-                        
+
                         <div class="row">
-                            <div class="col-lg-6">
-                                <h4>Conditions</h4>
-                                <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width: 100%;">
-                                    <option value="Alzheimers">Alzheimer's</option>
-                                    <option value="Arthritis">Arthritis</option>
-                                    <option value="Asthma">Asthma</option>
-                                    <option value="Cancer">Cancer</option>
-                                    <option value="Diabetes">Diabetes</option>
-                                    <option value="HeartDisease">Heart disease</option>
-                                    <option value="HighBloodPressure">High blood pressure</option>
-                                    <option value="HighCholesterol">High cholesterol</option>
-                                    <option value="LowerBackPain">Lower back pain</option>
-                                    <option value="Migraines">Migraines</option>
-                                    <option value="Stroke">Stroke</option>
-                                </select>
+                            <div class="col-lg-5 panel panel-primary p-md m-sm">
+                                <div class="row text-center">
+                                    <div class="col-lg-12">
+                                        <h2><span class="text-info">Include</span></h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h4>Conditions</h4>
+                                        <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width: 100%;">
+                                            <option value="Alzheimers">Alzheimer's</option>
+                                            <option value="Arthritis">Arthritis</option>
+                                            <option value="Asthma">Asthma</option>
+                                            <option value="Cancer">Cancer</option>
+                                            <option value="Diabetes">Diabetes</option>
+                                            <option value="HeartDisease">Heart disease</option>
+                                            <option value="HighBloodPressure">High blood pressure</option>
+                                            <option value="HighCholesterol">High cholesterol</option>
+                                            <option value="LowerBackPain">Lower back pain</option>
+                                            <option value="Migraines">Migraines</option>
+                                            <option value="Stroke">Stroke</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4>Medications</h4>
+                                        <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width: 100%;">
+                                            <option value="Alprazolam">Alprazolam</option>
+                                            <option value="Amoxicillin">Amoxicillin</option>
+                                            <option value="Amphetamine">Amphetamine</option>
+                                            <option value="Aspirin">Aspirin</option>
+                                            <option value="Atorvastatin">Atorvastatin</option>
+                                            <option value="Insulin">Insulin</option>
+                                            <option value="Levothyroxine">Levothyroxine</option>
+                                            <option value="Lisinopril">Lisinopril</option>
+                                            <option value="Metformin">Metformin</option>
+                                            <option value="Prednisone">Prednisone</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="row p-h-sm">
+                                            <div class="col-lg-8">
+                                                <div class="form-group">
+                                                    <label><h4>Zip codes <small>(separate with commas)</small></h4></label>
+                                                    <input id="userName" name="userName" type="text" class="form-control" aria-required="true">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <label><h4>Range</h4></label>
+                                                <select class="js-example-basic-multiple" name="range">
+                                                    <option value="0">0 miles</option>
+                                                    <option value="3">3 miles</option>
+                                                    <option value="5" selected="true">5 miles</option>
+                                                    <option value="10">10 miles</option>
+                                                    <option value="25">25 miles</option>
+                                                    <option value="50">50 miles</option>
+                                                    <option value="100">100 miles</option>
+                                                    <option value="250">250+ miles</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                <h4>Medications</h4>
-                                <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width: 100%;">
-                                    <option value="Alprazolam">Alprazolam</option>
-                                    <option value="Amoxicillin">Amoxicillin</option>
-                                    <option value="Amphetamine">Amphetamine</option>
-                                    <option value="Aspirin">Aspirin</option>
-                                    <option value="Atorvastatin">Atorvastatin</option>
-                                    <option value="Insulin">Insulin</option>
-                                    <option value="Levothyroxine">Levothyroxine</option>
-                                    <option value="Lisinopril">Lisinopril</option>
-                                    <option value="Metformin">Metformin</option>
-                                    <option value="Prednisone">Prednisone</option>
-                                </select>
+                            <div class="col-lg-5 panel panel-danger p-md m-sm">
+                                <div class="row text-center">
+                                    <div class="col-lg-12">
+                                        <h2><span class="text-danger">Exclude</span></h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h4>Conditions</h4>
+                                        <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width: 100%;">
+                                            <option value="Alzheimers">Alzheimer's</option>
+                                            <option value="Arthritis">Arthritis</option>
+                                            <option value="Asthma">Asthma</option>
+                                            <option value="Cancer">Cancer</option>
+                                            <option value="Diabetes">Diabetes</option>
+                                            <option value="HeartDisease">Heart disease</option>
+                                            <option value="HighBloodPressure">High blood pressure</option>
+                                            <option value="HighCholesterol">High cholesterol</option>
+                                            <option value="LowerBackPain">Lower back pain</option>
+                                            <option value="Migraines">Migraines</option>
+                                            <option value="Stroke">Stroke</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4>Medications</h4>
+                                        <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width: 100%;">
+                                            <option value="Alprazolam">Alprazolam</option>
+                                            <option value="Amoxicillin">Amoxicillin</option>
+                                            <option value="Amphetamine">Amphetamine</option>
+                                            <option value="Aspirin">Aspirin</option>
+                                            <option value="Atorvastatin">Atorvastatin</option>
+                                            <option value="Insulin">Insulin</option>
+                                            <option value="Levothyroxine">Levothyroxine</option>
+                                            <option value="Lisinopril">Lisinopril</option>
+                                            <option value="Metformin">Metformin</option>
+                                            <option value="Prednisone">Prednisone</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="row p-h-sm">
+                                            <div class="col-lg-8">
+                                                <div class="form-group">
+                                                    <label><h4>Zip codes <small>(separate with commas)</small></h4></label>
+                                                    <input id="userName" name="userName" type="text" class="form-control" aria-required="true">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <label><h4>Range</h4></label>
+                                                <select class="js-example-basic-multiple" name="range">
+                                                    <option value="0">0 miles</option>
+                                                    <option value="3">3 miles</option>
+                                                    <option value="5" selected="true">5 miles</option>
+                                                    <option value="10">10 miles</option>
+                                                    <option value="25">25 miles</option>
+                                                    <option value="50">50 miles</option>
+                                                    <option value="100">100 miles</option>
+                                                    <option value="250">250+ miles</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <hr>
+                        <!-- <hr>
 
-                        <div class="row">
+                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label><h4>Zip codes <small>(separate with commas)</small></h4></label>
@@ -368,7 +463,7 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row">
                                 <div class="col-lg-12">
@@ -586,7 +681,7 @@
                                             </div>
                                             <div class="col-8 text-right">
                                                 <span> Estimated Reach </span>
-                                                <h2 class="font-bold">100,000</h2>
+                                                <h2 class="font-bold">65,000</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -600,7 +695,7 @@
                                             </div>
                                             <div class="col-8 text-right">
                                                 <span> Estimated Leads </span>
-                                                <h2 class="font-bold">3,000</h2>
+                                                <h2 class="font-bold">1,000</h2>
                                             </div>
                                         </div>
                                     </div>
